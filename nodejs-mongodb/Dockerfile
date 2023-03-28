@@ -1,4 +1,4 @@
-FROM ubuntu
+FROM ubuntu:precise
 MAINTAINER Kimbro Staken 
 
 RUN apt-get install -y python-software-properties python python-setuptools ruby rubygems
