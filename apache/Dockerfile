@@ -1,5 +1,6 @@
 # A basic apache server. To use either add or bind mount content under /var/www
-FROM ubuntu:12.04
+ARG REGISTRY=jpd2.tomjfrog.com/team1-docker-dev-virtual
+FROM $REGISTRY/ubuntu:18.10
 
 MAINTAINER Kimbro Staken version: 0.1
 
@@ -10,5 +11,6 @@ ENV APACHE_RUN_GROUP www-data
 ENV APACHE_LOG_DIR /var/log/apache2
 
 EXPOSE 80
+EXPOSE 8080
 
 CMD ["/usr/sbin/apache2", "-D", "FOREGROUND"]
